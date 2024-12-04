@@ -1,9 +1,15 @@
-const num = 123;
+function isPrime(num) {
+  if (num <= 1) return false;
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
 
-const divBy2 = num % 2 === 0;
-const divBy3 = num % 3 === 0;
-const divBy5 = num % 5 === 0;
-
-const result = Number(divBy2) + Number(divBy3) + Number(divBy5);
-
-console.log(result);
+for (let i = 2; i < 237; i++) {
+  if (isPrime(i)) {
+    console.log(i);
+  }
+}
